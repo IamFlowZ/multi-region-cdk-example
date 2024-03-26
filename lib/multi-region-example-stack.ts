@@ -1,16 +1,18 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import { AppStack } from './app-stack/app-stack';
 
 export class MultiRegionExampleStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
+    const regions = ['us-east-1', 'eu-west-1'];
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'MultiRegionExampleQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    const regionalStacks = regions.reduce((accu, region) => {
+      const regionalStack = new AppStack(this, region, {
+        env: { region },
+      });
+      return { ...accu, [region]: regionalStack };
+    }, {});
   }
 }

@@ -11,8 +11,3 @@ new AppStack(app, 'AppStack', {
   },
 });
 
-new AppStack(app, 'AppStack', {
-  env: {
-    region: 'eu-west-1',
-  },
-});

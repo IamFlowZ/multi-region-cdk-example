@@ -8,6 +8,7 @@ export class MultiRegionExampleStack extends cdk.Stack {
 
     const regions = ['us-east-1', 'eu-west-1'];
 
+    // store the regional stacks in an object for debugging
     const regionalStacks = regions.reduce((accu, region) => {
       const regionalStack = new AppStack(this, region, {
         env: { region },

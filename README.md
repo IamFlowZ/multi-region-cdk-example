@@ -15,9 +15,10 @@ If you would like to target a specific account and environment, you can modify `
 
 ## Useful commands
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npm run deploy`  deploy this stack to your default AWS account/region, and the sub stacks to the regions specified in `multi-region-example-stack.ts`
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+* `npm run build`          compile typescript to js
+* `npm run watch`          watch for changes and compile
+* `npm run test`           perform the jest unit tests
+* `npm run deploy`         deploy this stack to your default AWS account/region, and the sub stacks to the regions specified in `multi-region-example-stack.ts`
+* `npx cdk diff`           compare deployed stack with current state
+* `npx cdk synth`          emits the synthesized CloudFormation template
+* `npx cdk destroy --all`  tear down the deployed stacks
